@@ -67,7 +67,7 @@ console.log(bar);
 */
 
 //Object 객체.
-// var obj = new Object();
+// var obj = new Object(); // {}
 //빈 객체가 생성.
 // console.log(obj);
 /*
@@ -86,7 +86,7 @@ obj.category = [1,2,3,4];
 console.log(obj);
 //객체는 여러 타입의 데이터를 담을 수 있다.
 */
-
+/*
 //선언하면서 값을 할당.
 var obj = {
   'name_ko' : '김용원',
@@ -95,7 +95,7 @@ var obj = {
   job : '교수',
   greeting : '안녕하세요.',
   number : 1,
-  group : { number : 1, name : '그룹' },
+  group : { number : 1, name : '그룹', group : [0,1,2]  },
   category : [1,2,3,4]
 }
 console.log(obj);
@@ -103,6 +103,9 @@ console.log(obj);
 console.log(obj.name_ko);
 console.log(obj['name_en']);
 console.log(obj.group);
+console.log(obj.group.number);
+console.log(obj['group']['name']);
+console.log(obj['group']['group'][0]);
 //객체에서 속성을 가지고 있는지 체크.
 //가지고 있다면 - true. 없다면 - false.
 console.log(obj.hasOwnProperty('greeting')); //true.
@@ -118,5 +121,55 @@ obj.say = function() {
 }
 //객체에 있는 메서드를 호출.
 obj.say();
-
+*/
+/*
 //Array 배열.
+// var arr = new Array();
+// console.log(arr);
+//빈 배열이 생성.
+// var arr = [];
+// console.log(arr);
+//빈 배열이 생성.
+//배열을 생성하는 2가지 방법.
+// var arr = [1,2,3,4,5];
+// console.log(arr);
+var car = ['Hyundai', 'Kia', 'GM'];
+// console.log(car);
+//Array 의 메서드.
+//배열의 마지막부분에 값을 추가. //array.push('값', '값');
+car.push('Samsung');
+// console.log(car);
+//배열의 첫부분에 값을 추가. //array.unshift('값', '값');
+car.unshift('Benz');
+// console.log(car);
+//배열의 개수.
+// console.log(car.length);
+//배열의 마지막 값을 제거. - array.pop();
+car.pop();
+// console.log(car);
+//배열의 첫 값을 제거. - array.shift();
+car.shift();
+// console.log(car);
+//0 1 2.
+//추가.
+car[3] = 'BMW';
+// car[4] = 'BMW';
+//0 1 2 3 4.
+// console.log(car);
+//3 번째는 값이 없고 4 번째에 값이 할당.
+//값을 변경.
+car[0] = 'Tesla';
+console.log(car);
+//치환.
+car.splice(2, 0, 'Audi');
+//array.splice(시작할 순서, 삭제할 개수, 추가할 값);
+console.log(car);
+//배열의 값을 문자열로 출력. - array.join(), array.join('값과 값 사이에 들어갈 문자열');
+var message = car.join(); //array.join() '값,값,값,....';
+message = car.join('. .'); //array.join('. .') '값. .값. .값. .'
+console.log(message);
+//배열의 순서를 반대로 변경. - array.reverse();
+var _car = car; //원본은 그대로 두고 새로운 변수에 복제.
+_car.reverse(); //배열의 순서를 반대로 변경.
+console.log(_car);
+*/
