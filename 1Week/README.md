@@ -25,16 +25,14 @@ jQuery 로드(ready) 되는 함수 부분에
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="./css/reset.css">
-    <script src="./js/jquery.min.js"></script>
-    <!-- <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script> -->
     <title>1WEEK</title>
 </head>
 <body>
-    <h1>1WEEK - 08/29</h1>
-<script>
+<h1>1WEEK - 08/29</h1>
+<script src="./js/jquery.min.js" type="text/javascript"></script>
+<!-- <script src="https://code.jquery.com/jquery-3.4.1.min.js" type="text/javascript"></script> -->
+<script type="text/javascript">
 (function($){
     $(document).ready(function(){
         console.log('Hello World!');
