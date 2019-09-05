@@ -173,3 +173,88 @@ var _car = car; //원본은 그대로 두고 새로운 변수에 복제.
 _car.reverse(); //배열의 순서를 반대로 변경.
 console.log(_car);
 */
+
+//loop 반복문.
+//for, while, for...in forEach, for...of
+//break, continue.
+
+// for(초기화; 반복조건; 반복시 실행되는 코드(증감)){
+//     반복해서 실행되는 코드
+// }
+
+// for(var i = 0; i < 10; i++){
+//     console.log(i);
+// }
+/*
+var i = 1;
+for(i; i <= 10; i++){
+    console.log(i);
+    //코드의 반복실행.
+    document.write("반복문 실행 : " + i + '<br/>');
+}
+*/
+
+//while.
+// while(조건){
+//     반복해서 실행되는 코드.
+//     코드가 끝난 후 증감... -> 탈출 가능.ㅠㅠ
+// }
+/*
+var i = 10;
+while(i >= 1) {
+    document.write("반복문 실행 : " + i + '<br/>');
+    i--; //******* 증감에 대한 코드를 내부에 작성.
+}
+
+var count = 0;
+var sum = 0;
+while(count <= 10){
+    //sum = sum + count;
+    sum += count;
+    count++;
+}
+console.log(sum);
+*/
+
+//for 중첩.
+/*
+for(var i = 0; i < 10; i++){
+    for(var j = 0; j < 10; j++){
+        for(var k = 0; k < 10; k++){
+            console.log('i : ' + i + ', j : ' + j + ', k : ' + k);
+        }
+    }
+}
+*/
+
+//for...in
+// for(변수 in 객체){
+//     반복해서 실행되는 코드
+//     //변수 - 내부에서 사용가능한 변수.
+// }
+/*
+var cars = {
+    "Hyundai" : "현대",
+    "Kia" : "기아",
+    "Samsung" : "삼성"
+};
+var _cars = [];
+for(var car in cars){
+    console.log(car); // 속성명.
+    console.log(cars[car]); //속성값.
+    //cars["Hyundai"].
+    //cars["Kia"].
+    //cars["Samsung"].
+    _cars.push(cars[car]); //_cars 배열에 속성값만 추가.
+}
+console.log(_cars);
+*/
+var cars = ["Hyundai", "Kia", "Samsung"];
+cars.forEach(function(value){
+    console.log(value);
+});
+
+//function 함수.
+//함수형, 리터럴, 즉시실행X.
+//함수 반환.
+//매개변수.
