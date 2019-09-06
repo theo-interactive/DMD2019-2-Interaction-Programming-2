@@ -49,7 +49,7 @@ var order = {
      coffee:['아메리카노' , '에스프레소' , '카페라떼']
 };
 // 2
-for(var p = 0; p <= order.coffee.length; p++){
+for(var p = 0; p <= order.coffee.length-1; p++){
      console.log(order.name + '님, 주문하신' + order.coffee[p] + '1잔 나왔습니다' );
 };
 
