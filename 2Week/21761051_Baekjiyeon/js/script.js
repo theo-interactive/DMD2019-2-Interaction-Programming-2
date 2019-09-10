@@ -1,5 +1,7 @@
 // console.log('script load');
+
 //Answer 1.
+
         var selectors = {
                number : 2
             };
@@ -9,8 +11,8 @@
             delete selectors.string;
             console.log(selectors);
             
-            
 //Answer 2.
+
         var cars = ['Hyendai', 'kia', 'samsung', 'GM'];
             var _cars = '';
             for (var i = cars.length - 1; i >= 0; i--){
@@ -22,8 +24,11 @@
             console.log(_cars);
     
 //Answer 3.
+
     //...문제 이해가 잘 안됩니다.....
+
 //Answer 4.
+
         function orderCoffee(name, menu, cups){
             return name + '고객님, 주문하신 ' + menu + ', ' + cups + ' 잔 나왔습니다.'; 
         }
@@ -31,7 +36,6 @@
         console.log(coffee);
     
 //Answer 5.
-    
     
         function id(){
         var Identity = 
