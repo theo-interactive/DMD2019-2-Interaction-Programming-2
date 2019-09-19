@@ -11,6 +11,18 @@ var logStyle = "padding:2px;background:#fff;border-radius:4px;color:#222;";
 7. console.log 메서드를 이용해서 selectors 객체를 출력합니다.
 */
 console.log("%c Answer 1. ", logStyle);
+var selectors = {
+    number : 2
+}
+selectors.string = " ";
+// selectors["string"] = " ";
+selectors.dom = ["header"];
+// selectors["dom"] = ["header"];
+selectors.dom.push("main", "footer");
+// selectors.dom.splice(1, 0, "main", "footer");
+delete selectors.string;
+// delete selectors["string"];
+console.log(selectors);
 
 
 //Answer 2.
@@ -20,6 +32,34 @@ console.log("%c Answer 1. ", logStyle);
 3. console.log 메서드를 이용해서 cars 를 출력합니다.
 */
 console.log("%c Answer 2. ", logStyle);
+var cars = ["Hyundai", "Kia", "Samsung", "GM"];
+/*
+for(var i = 0; i <= cars.length - 1; i++) {
+    console.log(i, cars[i]);
+}
+*/
+/*
+for(var i = cars.length - 1; i >= 0; i--) {
+    console.log(i, cars[i]);
+}
+*/
+cars.reverse();
+//console.log(cars);
+for(var i = 0; i <= cars.length - 1; i++) {
+    console.log(i, cars[i]);
+}
+for(var index in cars) {
+    console.log(cars[index]);
+}
+for(var car of cars) {
+    console.log(car);
+}
+cars.forEach(function(car, index) {
+    console.log(car, index);
+});
+cars.forEach(function(car) {
+    console.log(car);
+});
 
 
 //Answer 3.
@@ -28,6 +68,13 @@ console.log("%c Answer 2. ", logStyle);
 2. 여러가지 방법의 반복문을 이용하여 작성해도 됩니다.
 */
 console.log("%c Answer 3. ", logStyle);
+//document, window, screen ... 브라우저가 실행될 때 포함하고 있는 내장변수.
+console.log(document);
+console.log(typeof document);
+for(var key in document) {
+    console.log(key, document[key]);
+}
+
 
 //Answer 4.
 /*
@@ -36,6 +83,13 @@ console.log("%c Answer 3. ", logStyle);
 3. 문자열 : “name 님, 주문하신 coffee 1잔 나왔습니다.”
 */
 console.log("%c Answer 4. ", logStyle);
+var orders = { name : ["김용원"], coffee : ["아메리카노", "에스프레소", "카페라떼"] };
+for(var i = 0; i <= orders.coffee.length - 1; i++){
+    var name = orders.name[0];
+    var coffee = orders.coffee[i];
+    var msg = name + " 님, 주문하신 " + coffee + " 1잔 나왔습니다.";
+    console.log(msg);
+}
 
 
 //Answer 5.
