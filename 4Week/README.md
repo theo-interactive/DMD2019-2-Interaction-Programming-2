@@ -10,7 +10,7 @@
 
 ### Quest 1.
 
-- 모든 li 요소들을 선택하고 addClass 메서드를 이용해서 active 클래스를 추가합니다.
+- 모든 li 요소들을 선택하고 addClass 메서드를 이용하여 active 클래스를 추가합니다.
 
 ### Quest 2.
 
