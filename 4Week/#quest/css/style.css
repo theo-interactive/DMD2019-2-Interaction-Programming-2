@@ -1,9 +1,7 @@
-a{color:#333}
+a{color:#333;text-decoration:none}
 .active{background-color:#f00}
 .current{background-color:#0f0}
-.zero{background-color:#0ff}
-.inner{background-color:#f0f}
+.underline{text-decoration:underline}
 .role{background-color:#00f}
-.emphasis{background-color:#ff0;color:#fff}
-.bold{font-weight:600}
-.hidden{display:none}
+#menu a{opacity:0.5}
+#menu.open a{opacity:1.0}
