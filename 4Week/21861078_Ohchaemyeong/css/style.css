@@ -1,0 +1,7 @@
+a{color:#333;text-decoration:none}
+.active{background-color:#f00}
+.current{background-color:#0f0}
+.underline{text-decoration:underline}
+.role{background-color:#00f}
+#menu a{opacity:0.5}
+#menu.open a{opacity:1.0}
