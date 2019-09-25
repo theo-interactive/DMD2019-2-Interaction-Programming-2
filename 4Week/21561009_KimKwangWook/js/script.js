@@ -42,7 +42,7 @@ var logStyle = "padding:2px;background:#fff;border-radius:4px;color:#222;";
          */
         //Answer 5.
 
-        console.log($('#menu.nav').removeClass('open'));  
+        console.log($('nav#menu').removeClass('open'));  
 
 
          /*
