@@ -47,7 +47,7 @@ var logStyle = "padding:2px;background:#fff;border-radius:4px;color:#222;";
         */
         //Answer 6.
         console.log("%c Answer 6.", logStyle);
-        $('section.content').length;
+        console.log($('section.content').length);
 
         
     });
