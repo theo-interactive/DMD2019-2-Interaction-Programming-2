@@ -52,7 +52,6 @@ var logStyle = "padding:2px;background:#fff;border-radius:4px;color:#222;";
         아이디가 radio-2 가 아닌 input radio 요소의 부모노드를 찾고, 자식노드 label 요소에 emphasis 클래스를 추가합니다.
         */
         //Answer 7.
-        console.log("%c Answer 7.", logStyle);
 
 
         //Practice 8.
