@@ -64,4 +64,4 @@ var images = ['./img/banner/01.jpg', './img/banner/02.jpg', './img/banner/03.jpg
 
 ## 제출기한
 
-10월 9일 (수) 23:00 까지 업로드
+10월 16일 (수) 23:00 까지 업로드
