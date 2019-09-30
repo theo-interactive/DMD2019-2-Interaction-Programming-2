@@ -65,7 +65,8 @@ var logStyle = "padding:2px;background:#fff;border-radius:4px;color:#222;";
         //Answer 6.
         console.log("%c Answer 6.", logStyle);
 
-        $('a:contains(Menu 7)');                        //1
+        console.log($('a:contains(Menu 7)'));           //1
+        
         $('ul.gnb').find('li').eq(6).find('a');         //2
         $('ul.gnb li:nth-child(6)').children('a');      //2.5...
 
@@ -76,8 +77,8 @@ var logStyle = "padding:2px;background:#fff;border-radius:4px;color:#222;";
         자식노드 label 요소에 emphasis 클래스를 추가합니다.
         */
         //Answer 7.
-        var p7 = $('input').not('#radio-2').find(type= "radio").parent;
-        p7.children(find(label)).addClass('emphasis')
+        var p7 = $('input').not('#radio-2').find(type= "radio").parent();
+        p7.children(find('label')).addClass('emphasis');
 
 
         //Quest 8.
