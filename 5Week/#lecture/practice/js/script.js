@@ -6,7 +6,14 @@ var logStyle = "padding:2px;background:#fff;border-radius:4px;color:#222;";
         문서내의 li 요소들 중 0 index 에 위치한 노드를 선택하고, 해당 요소에 zero 클래스를 추가합니다.
         */
         //Answer 1.
-
+        // var $li = $('li').eq(0);
+        // $li.addClass('zero');
+        $('li').eq(0).addClass('zero');
+        $('li').first().addClass('zero'); 
+        $($('li').get(0));
+        // '요소' -> $('요소');
+        // get(0)
+        // [0]
 
         //Practice 2.
         /*
@@ -45,6 +52,9 @@ var logStyle = "padding:2px;background:#fff;border-radius:4px;color:#222;";
         */
         //Answer 6.
         console.log("%c Answer 6.", logStyle);
+        // $('ul.gnb').find('li').eq(6).find('a');
+        // $('ul.gnb li:nth-child(6)').children('a');
+        console.log($('a:contains(Menu 7)'));
 
 
         //Practice 7.
@@ -52,6 +62,11 @@ var logStyle = "padding:2px;background:#fff;border-radius:4px;color:#222;";
         아이디가 radio-2 가 아닌 input radio 요소의 부모노드를 찾고, 자식노드 label 요소에 emphasis 클래스를 추가합니다.
         */
         //Answer 7.
+        // <input type="radio"></input>
+        //$('#radio-2')
+        // $('input#radio-2').parent().find('label').addClass('emphasis');
+        //$('input[type=radio]#radio-2')
+        $('input[type="radio"]').not('#radio-2').parent().find('label').addClass('emphasis');
 
 
         //Practice 8.
