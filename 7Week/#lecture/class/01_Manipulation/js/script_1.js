@@ -1,5 +1,6 @@
 (function($) {
     $(document).ready(function() {
+<<<<<<< HEAD
         $('p').addClass('red'); 
         $('button').addClass('blue');
     
@@ -38,3 +39,8 @@
     });
     
     }) (jQuery);
+=======
+        
+    });
+})(jQuery);
+>>>>>>> 4e867d45072af32a65ff2dd353b056e194ec6cc4
