@@ -80,8 +80,8 @@
 
         //Answer 6.
 
-        $('.banner-item').children().find('img').css({
-            'width':'100%'
+        $('.banner-item').children().find('.arrow.prev').css({
+            'left':'18px'
         });
 
 
@@ -118,6 +118,8 @@
         */
 
         //Answer 9.
+
+
 
 
         /*
