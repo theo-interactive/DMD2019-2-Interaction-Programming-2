@@ -6,7 +6,7 @@
         */
 
         //Answer 1.
-        $('.banner').css({ 'overflow': 'hidden' });
+        $('.banner').css({ 'overflow':'hidden'});
 
         /*
         Quest 2.
@@ -15,6 +15,12 @@
 
         //Answer 2.
 
+        var $width = $('.banner').css('width');
+        var $height = $('.banner').css('height');
+        $('.banner-wrap').css({
+            'width': $width,
+            'height': $height
+        });
 
         /*
         Quest 3.
@@ -23,6 +29,13 @@
 
         //Answer 3.
 
+        var $banerWrapWidth = $('banner-wrap').css('width');
+        var $bannerItemLen = $('.banner-item').length;
+        var $containerWidth = $banerWrapWidth * $bannerItemLen;
+        $('.banner-container').css({
+            'width': $containerWidth,
+            'height': '100%'
+        })
 
         /*
         Quest 4.
@@ -30,7 +43,11 @@
         */
 
         //Answer 4.
-
+        $('.banner-item').css({
+            'float': 'left',
+            'width': $containerWidth,
+            'height': '100%'
+        })
 
         /*
         Quest 5.
@@ -38,7 +55,11 @@
         */
 
         //Answer 5.
-
+        var $bannerImg = $('.banner-item').children().find('img');
+        // console.log($bannerImg);
+        $bannerImg.css({
+            'width': '100%'
+        })
 
         /*
         Quest 6.
@@ -46,7 +67,11 @@
         */
 
         //Answer 6.
-
+        var $arrowprev = $('.paddle-nav').find('.arrow.prev');
+        // console.log($paddleNavChild);
+        $arrowprev.css({
+            'left': '18px'
+        })
 
         /*
         Quest 7.
@@ -54,7 +79,10 @@
         */
 
         //Answer 7.
-
+        var $arrownext = $('.paddle-nav').find('.arrow.next');
+        $arrownext.css({
+            'right':'18px'
+        })
 
         /*
         Quest 8.
@@ -62,7 +90,9 @@
         */
 
         //Answer 8.
-        $('.dot-nav').css('button','20');
+        $('.dot-nav ').css({
+            'button': '20px'
+        })
 
         /*
         Quest 9.
