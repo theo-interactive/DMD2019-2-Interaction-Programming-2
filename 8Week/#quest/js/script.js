@@ -6,7 +6,7 @@
         */
 
         //Answer 1.
-        $('.banner').css({ 'overflow': 'hidden' });
+
 
         /*
         Quest 2.
@@ -62,7 +62,7 @@
         */
 
         //Answer 8.
-        $('.dot-nav').css('button','20');
+        
 
         /*
         Quest 9.
