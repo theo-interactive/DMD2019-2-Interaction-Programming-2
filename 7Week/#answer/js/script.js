@@ -5,7 +5,10 @@
         my-name 아이디를 가진 span 요소를 생성하고 ‘제 이름은 본인이름입니다.’ 의 내용을 추가하여 hello 아이디를 가진 div 노드의 첫 번째 자식노드로 추가합니다.
         */
         //Answer 1.
-
+        //appendTo()
+        //prependTo();
+        $('<span id="my-name">제 이름은 김용원입니다.</span>').appendTo('div#hello');
+        // $('div#hello').append('<span id="my-name">제 이름은 김용원입니다.</span>');
 
         //Quest 2.
         /*
@@ -15,7 +18,12 @@
         */
         //Answer 2.
         var images = ['./img/banner/01.jpg', './img/banner/02.jpg', './img/banner/03.jpg'];
-
+        for(var i = 0; i < images.length; i++){
+            var $item = $('<div class="banner-item"></div>');
+            var $img = $('<img src="' + images[i] + '"/>');
+            $item.append($img);
+            $('div.banner-container').append($item);
+        }
 
         //Quest 3.
         /*
@@ -23,7 +31,7 @@
         2. p.move-top 노드에 move 라는 클래스를 추가하고, 노드 안의 내용을 ‘위로 이동했습니다.’ 로 변경합니다.
         */
         //Answer 3.
-
+        $('p.move-top').prependTo('body').addClass('move').text('위로 이동했습니다.');
 
         //Quest 4.
         /*
@@ -31,34 +39,41 @@
         2. p.move-bottom 노드에 move 라는 클래스를 추가하고, 노드 안의 내용을 ‘아래로 이동했습니다.’ 로 변경합니다.
         */
         //Answer 4.
-
+        $('p.move-bottom').appendTo('body').addClass('move').html('아래로 이동했습니다.');
 
         //Quest 5.
         /*
         p.error 노드를 삭제합니다.
         */
         //Answer 5.
-
+        $('p.error').remove();
 
         //Quest 6.
         /*
         p.modify 노드의 내용을 ‘수정되었습니다.’ 로 수정합니다.
         */
         //Answer 6.
-
+        $('p.modify').html('수정되었습니다.');
 
         //Quest 7.
         /*
         p.modify 노드의 내용을 비우고 문서에서 삭제합니다.
         */
         //Answer 7.
-
+        $('p.modify').empty();
+        $('p.modify').html('').remove();
 
         //Quest 8.
         /*
         ul.list-1 의 첫번 째 li 자식노드의 뒤에 반복문을 이용하여 ‘리스트 2’, ‘리스트 3’, ‘리스트 4’ 의  내용을 가지는 li 요소를 생성한 후 추가합니다.
         */
         //Answer 8.
+        var $liFirst = $('ul.list-1').find('li').eq(0);
+        // for(var i = 2; i < 5; i++){
+        for(var i = 4; i > 1; i--){
+            var $li = $('<li>리스트 ' + i + '</li>');
+            $liFirst.after($li);
+        }
 
 
         //Quest 9.
@@ -66,7 +81,11 @@
         ul.list-2 의 첫번 째 li 자식노드의 앞에 반복문을 이용하여 ‘리스트 1’, ‘리스트 2’, ‘리스트 3’, ‘리스트 4’ 의  내용을 가지는 li 요소를 생성한 후 추가합니다.
         */
         //Answer 9.
-
+        var $liFirst = $('ul.list-2').find('li').eq(0);
+        for(var i = 1; i < 5; i++){
+            var $li = $('<li>리스트 ' + i + '</li>');
+            $liFirst.before($li);
+        }
 
         //Quest 10.
         /*
@@ -80,7 +99,36 @@
         힌트 - Boolean 또는 Class 를 조건문에 함께 이용합니다.
         */
         //Answer 10.
-
-
+        var $box = $('div.box-1');
+        $box.width(100);
+        var isDirection = false;
+        $('button.btn-1').on('click', function(e) {
+            var width = $box.width();
+            if(!isDirection){
+                width = width + 100;
+                if(width <= 500) {
+                    if(width == 500){
+                        isDirection = true;
+                    }
+                    $box.width(width);
+                }
+            }else{
+                width = width - 100;
+                if(width >= 100){
+                    if(width == 100){
+                        isDirection = false;
+                    }
+                    $box.width(width);
+                }
+            }
+            // // 눌렀을 때, box의 width 값 가져오기.
+            // var width = $box.width();
+            // console.log(width);
+            // // 현재 box의 width 값에 + 100px.
+            // width = width + 100;
+            // console.log(width);
+            // // box의 width 값을 재설정.
+            // $box.width(width);
+        });
     });
 })(jQuery);
