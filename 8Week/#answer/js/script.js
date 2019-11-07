@@ -6,7 +6,8 @@
         */
 
         //Answer 1.
-
+        var $banner = $('.banner');
+        $banner.css({'overflow' : 'hidden'});
 
         /*
         Quest 2.
@@ -14,7 +15,9 @@
         */
 
         //Answer 2.
-
+        var bannerW = $banner.width(), bannerH = $banner.height();
+        var $bannerWrap = $('.banner-wrap');
+        $bannerWrap.width(bannerW).height(bannerH);
 
         /*
         Quest 3.
@@ -22,7 +25,11 @@
         */
 
         //Answer 3.
-
+        var $bannerContainer = $('.banner-container');
+        var $bannerItem = $bannerContainer.find('.banner-item');
+        var max = $bannerItem.length;
+        var containerW = bannerW * max;
+        $bannerContainer.width(containerW).height(100 + '%');
 
         /*
         Quest 4.
@@ -30,7 +37,7 @@
         */
 
         //Answer 4.
-
+        $bannerItem.css({'float' : 'left'}).width(bannerW).height(100 + '%');
 
         /*
         Quest 5.
@@ -38,7 +45,8 @@
         */
 
         //Answer 5.
-
+        var $bannerItemImg = $bannerItem.find('img');
+        $bannerItemImg.width(100 + '%');
 
         /*
         Quest 6.
@@ -46,7 +54,9 @@
         */
 
         //Answer 6.
-
+        var $paddleNav = $('.paddle-nav');
+        var $arrowPrev = $paddleNav.find('.arrow.prev');
+        $arrowPrev.css({'left' : 18 + 'px'});
 
         /*
         Quest 7.
@@ -54,7 +64,8 @@
         */
 
         //Answer 7.
-
+        var $arrowNext = $paddleNav.find('.arrow.next');
+        $arrowNext.css({'right' : 18 + 'px'});
 
         /*
         Quest 8.
@@ -62,7 +73,8 @@
         */
 
         //Answer 8.
-        
+        var $dotNav = $('.dot-nav');
+        $dotNav.css({'bottom' : 20 + 'px'});
 
         /*
         Quest 9.
@@ -72,7 +84,18 @@
         */
 
         //Answer 9.
-
+        var _id = 0;
+        var slideImage = function() {
+            var left = bannerW * _id * -1;
+            //$bannerContainer.stop(true).animate({'left' : left}, 400);
+            $bannerContainer.stop(true).animate({'left' : left}, {duration : 400, complete: function() {
+                dotSelect();
+            }});
+        }
+        var slideLeft = function() {
+            _id--;
+            slideImage();
+        }
 
         /*
         Quest 10.
@@ -81,7 +104,10 @@
         */
 
         //Answer 10.
-
+        var slideRight = function() {
+            _id++;
+            slideImage();
+        }
 
         /*
         Quest 11.
@@ -89,7 +115,14 @@
         */
 
         //Answer 11.
-
+        $arrowPrev.on('click', function(e) {
+            e.preventDefault();
+            slideLeft();
+        });
+        $arrowNext.on('click', function(e) {
+            e.preventDefault();
+            slideRight();
+        })
 
         /*
         //Quest 12.
@@ -99,7 +132,11 @@
         */
 
         //Answer 12.
-
+        var $dotNavSpan = $dotNav.find('span');
+        var dotSelect = function() {
+            $dotNavSpan.removeClass('selected');
+            $dotNavSpan.eq(_id).addClass('selected');
+        }
 
         /*
         Quest 13.
@@ -111,7 +148,6 @@
         */
 
         //Answer 13.
-
 
     });
 })(jQuery);
