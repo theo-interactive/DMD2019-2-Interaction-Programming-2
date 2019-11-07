@@ -105,10 +105,15 @@ fieldset{border:none}
 body{display:flex;width:1000px;height:100vh;margin:0 auto;align-items:center}
 .banner{overflow:hidden;position:relative;width:1000px;height:380px}
 .banner .banner-wrap{position:relative}
-.banner .banner-container{position:relative}
+.banner .banner-container{position:relative;
+	height:100%}
 .banner .banner-container::after{content:'';display:block;position:relative;clear:both}
-.banner .banner-container .banner-item{position:relative}
+.banner .banner-container .banner-item{position:relative;
+	float:left;height:100%}
 .banner .banner-container .banner-item .image-area{position:absolute;width:100%}
+
+.banner .banner-container .banner-item .image-area img{display:inline-block;width:100%;vertical-align:top}
+
 .banner .banner-container .banner-item .text-area{display:flex;position:relative;width:100%;height:100%;text-align:center;color:#fff;mix-blend-mode:hard-light;align-items:center;flex-direction:column;justify-content:center}
 .banner .banner-container .banner-item .text-area .title{display:block;text-transform:capitalize;font-size:36px;font-weight:700;line-height:42px}
 .banner .banner-container .banner-item .text-area .desc{display:block;padding-top:14px;padding-bottom:20px;font-size:20px;font-weight:500;line-height:26px}
