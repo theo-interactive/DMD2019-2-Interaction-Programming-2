@@ -19,6 +19,16 @@
         var $bannerWrap = $('.banner-wrap');
         $bannerWrap.width(bannerW).height(bannerH);
 
+        // $('.banner-wrap')
+          //  .width($('.banner').width())
+          //  .height($('.banner').height());
+        
+        // $el.width(), $el.height();
+        // 노드의 width, height 값을 가져온다.
+        // $el.width(100), $el.height(100);
+        // - 숫자타입, 문자열 ex. "100px", "100%", "100vw", "100vh"
+        // 노드에 width, height 값을 적용
+
         /*
         Quest 3.
         .banner-container 노드의 width 를 .banner-wrap 의 width x .banner-item 의 개수 의 너비만큼 계산하여 적용하고, height 는 100% 로 지정합니다.
@@ -26,10 +36,10 @@
 
         //Answer 3.
         var $bannerContainer = $('.banner-container');
-        var $bannerItem = $bannerContainer.find('.banner-item');
-        var max = $bannerItem.length;
+        var $bannerItem = $bannerContainer.find('.banner-item'); // 배열 반환.
+        var max = $bannerItem.length; // 배열의 개수를 구하는 Array.length
         var containerW = bannerW * max;
-        $bannerContainer.width(containerW).height(100 + '%');
+        $bannerContainer.width(containerW).height(100 + '%'); // 100 + "%" 문자열 연산, "100%"
 
         /*
         Quest 4.
@@ -85,16 +95,54 @@
 
         //Answer 9.
         var _id = 0;
-        var slideImage = function() {
-            var left = bannerW * _id * -1;
-            //$bannerContainer.stop(true).animate({'left' : left}, 400);
-            $bannerContainer.stop(true).animate({'left' : left}, {duration : 400, complete: function() {
-                dotSelect();
-            }});
+        function slideLeft() {
+            _id--; // _id 의 값이 1 씩 감소 _id = _id - 1; === _id--;
+            slideAnim();
         }
-        var slideLeft = function() {
-            _id--;
-            slideImage();
+        function slideAnim(){
+            // ...
+            // ...
+            // 1000(width) * (1) * -1 = -1000;
+            // 1000(width) * (0) * -1 = 0;
+            // 1000(width) * (-1) * -1 = 1000;
+            // ...
+            // ...
+
+            var left = bannerW * _id * -1;
+            // left 속성을 이동할 때.
+            // 왼쪽에서 오른쪽으로 이동하려면 0px 에서 -(마이너스) 값으로 이동해야 화면에서 이동되는 것이 확인된다.
+            // $bannerContainer.css({'left': left});
+            // $bannerContainer.stop(true).animate({'left': left}, 500);
+            /*
+            $bannerContainer.stop(true).animate(
+                {
+                    'left': left
+                }, 
+                {
+                    duration: 500,
+                    complete: function() {
+                        dotSelect();
+                    }
+                }
+            );
+            */
+           
+            // dotSelect();
+            paddleCheck();
+            $bannerContainer.stop(true).animate({'left': left }, {duration: 500, complete: function() {
+            //$bannerContainer.stop(true).delay(500).animate({'left': left }, {duration: 500, complete: function() {
+                // console.log('애니메이션 완료');
+                dotSelect();
+                //paddleCheck();
+            }});
+
+            // animate() - 애니메이션 효과.
+            // animate({css 스타일}, 속도);
+            // animate({css 스타일}, {옵션});
+            // {옵션} - {duration: 속도, complete: function() {애니메이션이 완료된 후 콜백함수}}
+
+            // delay() - 애니메이션을 속도만큼 지연.
+            // delay(속도) 
         }
 
         /*
@@ -104,9 +152,9 @@
         */
 
         //Answer 10.
-        var slideRight = function() {
-            _id++;
-            slideImage();
+        function slideRight() {
+            _id++; // 0 -> 1, 1 -> 2, 2 -> 3...
+            slideAnim();
         }
 
         /*
@@ -122,7 +170,7 @@
         $arrowNext.on('click', function(e) {
             e.preventDefault();
             slideRight();
-        })
+        });
 
         /*
         //Quest 12.
@@ -132,8 +180,9 @@
         */
 
         //Answer 12.
-        var $dotNavSpan = $dotNav.find('span');
-        var dotSelect = function() {
+        // 이미지 순서 - _id;
+        var $dotNavSpan = $dotNav.find('span'); // 노드 배열 반환 (5개).
+        function dotSelect() {
             $dotNavSpan.removeClass('selected');
             $dotNavSpan.eq(_id).addClass('selected');
         }
@@ -148,6 +197,18 @@
         */
 
         //Answer 13.
+        function paddleCheck(){
+            if(_id === 0){
+                $arrowPrev.addClass('disabled');
+            }else if(_id === max - 1){ // item(5) 0, 1, 2, 3, 4
+                $arrowNext.addClass('disabled');
+            }else{
+                $arrowPrev.removeClass('disabled');
+                $arrowNext.removeClass('disabled');
+            }
+        }
 
+        // initialize. 초기화 세팅.
+        paddleCheck();
     });
 })(jQuery);
