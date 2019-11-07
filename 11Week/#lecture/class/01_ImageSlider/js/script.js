@@ -1,35 +1,43 @@
 (function($){
     $(document).ready(function(){
+
+        // Selector.
         var $banner = $('.banner');
-        var bannerW = $banner.width(), bannerH = $banner.height();
         var $bannerWrap = $('.banner-wrap');
-        $bannerWrap.width(bannerW).height(bannerH);
         var $bannerContainer = $('.banner-container');
         var $bannerItem = $bannerContainer.find('.banner-item');
-        var max = $bannerItem.length;
-        var containerW = bannerW * max;
-        $bannerContainer.width(containerW).height(100 + '%');
-        $bannerItem.css({'float' : 'left'}).width(bannerW).height(100 + '%');
         var $bannerItemImg = $bannerItem.find('img');
-        $bannerItemImg.width(100 + '%');
         var $paddleNav = $('.paddle-nav');
         var $arrowPrev = $paddleNav.find('.arrow.prev');
         var $arrowNext = $paddleNav.find('.arrow.next');
         var $dotNav = $('.dot-nav');
-        var _id = 0;
+
+        // Value Setting.
+        var _cuId = 0;
+        var _exId = _cuId;
+        var _max = $bannerItem.length;
+        var bannerW = $banner.width(),
+            bannerH = $banner.height();
+        var containerW = bannerW * _max;
+
+        // Resize.
+        $bannerWrap.width(bannerW).height(bannerH);
+        $bannerContainer.width(containerW);
+        $bannerItem.width(bannerW);
+
         function slideLeft() {
-            _id--;
+            _cuId--;
             slideAnim();
         }
         function slideAnim(){
-            var left = bannerW * _id * -1;
+            var left = bannerW * _cuId * -1;
             paddleCheck();
             $bannerContainer.stop(true).animate({'left': left }, {duration: 500, complete: function() {
                 dotSelect();
             }});
         }
         function slideRight() {
-            _id++;
+            _cuId++;
             slideAnim();
         }
         $arrowPrev.on('click', function(e) {
@@ -43,12 +51,12 @@
         var $dotNavSpan = $dotNav.find('span'); // 노드 배열 반환 (5개).
         function dotSelect() {
             $dotNavSpan.removeClass('selected');
-            $dotNavSpan.eq(_id).addClass('selected');
+            $dotNavSpan.eq(_cuId).addClass('selected');
         }
         function paddleCheck(){
-            if(_id === 0){
+            if(_cuId === 0){
                 $arrowPrev.addClass('disabled');
-            }else if(_id === max - 1){
+            }else if(_cuId === _max - 1){
                 $arrowNext.addClass('disabled');
             }else{
                 $arrowPrev.removeClass('disabled');
