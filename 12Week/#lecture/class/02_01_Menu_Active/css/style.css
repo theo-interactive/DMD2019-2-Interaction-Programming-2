@@ -54,5 +54,9 @@ fieldset{border:none}
 #global-nav li a.active{background-color:#222;color:#fff}
 .content{position:relative;margin-left:31%;margin-right:4%}
 .content .section{height:calc(100vh - 160px);padding-top:80px}
+/*
+calc()
+계산(값 + 값)
+*/
 .content .section:last-child{padding-bottom:80px}
 .content .section .area{width:100%;height:100%;padding:50px;background-color:#222;border:1px solid #222;color:#fff;font-size:40px;font-weight:600;line-height:50px;box-shadow:2px 4px 6px rgba(34,34,34,0.3);box-sizing:border-box}
