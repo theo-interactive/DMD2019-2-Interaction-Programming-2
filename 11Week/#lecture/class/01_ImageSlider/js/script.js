@@ -34,13 +34,16 @@
         var addEvent = function() {
             // window 리사이즈.
             $win.on('resize', function(e) {
+                
                 _bannerW = $win.width();
                 _bannerH = $win.height();
                 _containerW = _bannerW * _max;
+
                 $banner.width(_bannerW).height(_bannerH);
                 $bannerWrap.width(_bannerW).height(_bannerH);
                 $bannerContainer.width(_containerW);
                 $bannerItem.width(_bannerW);
+                
                 slideAnim(true); // 스타일만 변경.
             }).trigger('resize');
 
@@ -72,7 +75,6 @@
                     slideAnim();
                 }
             });
-
         };
 
         // Initialize. (초기화).

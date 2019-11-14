@@ -42,3 +42,65 @@ fieldset{border:none}
 
 /* ---- LAYOUT ---- */
 body{font-family:Apple SD Gothic Neo,Malgun Gothic,Dotum,Helvetica,Helvetica Neue,Arial,Verdana,sans-serif;font-weight:400;-webkit-font-smoothing:antialiased;word-spacing:-1px;-webkit-text-size-adjust:none}
+
+
+/*
+
+flexbox 적용방법
+부모요소(flex container)에 display:flex;
+- 자식요소들이 부모의 flex 속성에 따라 적용된다.
+
+flex-wrap 속성.
+- nowrap(기본값) | wrap | wrap-reverse
+- 자식요소들(flex item)의 flex container 의 가로폭에 따라서 자동으로 맞춰줄 것인가의 속성.
+- wrap: 자식요소들의 가로폭이 계속 유지.
+- nowrap: 자식요소 전체의 가로폭이 flex container 의 가로폭보다 작아질 때. 자동으로 자식요소들의 가로폭을 설정.
+- wrap-reverse: 
+
+flex-direction 속성.
+- row(기본값) | row-reverse | column | column-reverse
+- 자식요소들(flex item)이 위치하는 방향을 설정.
+- row: 왼쪽 - 오른쪽으로.
+- row-reverse: 오른쪽 - 왼쪽으로
+- column: 위 - 아래로으로
+- column-reverse: 아래 - 위로
+
+flex-flow 
+- flex-direction | flex-wrap 의 축약형
+
+
+justify-content
+- flex-start(기본값) | flex-end | center | space-between | space-around | space-evenly
+자식요소들(flex-item)의 정렬 설정.
+
+align-items |
+align-content
+- 수직방향의 정렬 방법 설정.
+- flex-start | flex-end | center | space-between | space-around | stretch
+*/
+
+.grid{display:flex;
+    width:100vw;
+    height:100vh;
+    padding:100px;
+    /* flex-wrap:wrap;
+    flex-direction:row; */
+    flex-flow:row wrap;
+    justify-content:space-evenly;
+    /* align-items:stretch; */
+    /* align-items:baseline; */
+    align-content:space-around;
+    box-sizing:border-box
+}
+
+/*
+flex item 에 적용하기.
+*/
+
+.grid-item{margin:20px;width:100px;height:100px;background-color:#7BBFB3;color:#fff;text-align:center;font-size:30px;font-weight:700;line-height:100px}
+
+/* .grid-item:nth-child(1){line-height:80px}
+.grid-item:nth-child(2){line-height:120px}
+.grid-item:nth-child(3){line-height:100px}
+.grid-item:nth-child(4){line-height:60px} */
+
