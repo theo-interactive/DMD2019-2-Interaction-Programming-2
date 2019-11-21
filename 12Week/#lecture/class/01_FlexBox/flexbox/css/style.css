@@ -95,12 +95,85 @@ align-content
 
 /*
 flex item 에 적용하기.
+
+order
+- 순서 정렬.
+- order 기본값 0
+- 음수 적용이 가능.
+
+flex-grow
+- item 에 각 비율만큼 부피 확장
+
+flex-shrink
+- item 에 각 비율만큼 부피 축소
+
+flex-basis
+- 기본 사이즈 지정
+
+flex
+- flex-grow | flex-shrink | flex-basis 의 축약형.
+
+align-self
+- item 에 개별적인 align 정렬 적용.
+
 */
 
-.grid-item{margin:20px;width:100px;height:100px;background-color:#7BBFB3;color:#fff;text-align:center;font-size:30px;font-weight:700;line-height:100px}
+.grid-item{margin:20px;width:100px;height:100px;background-color:#7BBFB3;color:#fff;text-align:center;font-size:30px;font-weight:700;line-height:100px;
+
+    flex-basis:100px;
+}
+
+.grid-item:nth-child(2),.grid-item:nth-child(5){background-color:rgb(248, 80, 184)}
+
+/* .grid-item:nth-child(1){flex-grow:0}
+.grid-item:nth-child(2){flex-grow:2}
+.grid-item:nth-child(5){flex-shrink:2} */
+
+/* .grid-item:nth-child(1){flex-grow:0}
+.grid-item:nth-child(2){flex-grow:2}
+.grid-item:nth-child(3){flex-shrink:2} */
+
+.grid-item:nth-child(2){align-self:flex-start}
 
 /* .grid-item:nth-child(1){line-height:80px}
 .grid-item:nth-child(2){line-height:120px}
 .grid-item:nth-child(3){line-height:100px}
 .grid-item:nth-child(4){line-height:60px} */
 
+/*
+
+Media Query.
+
+@media  (condition) and (condition) and (condition) ... {
+    --- css ---
+    .grid-item{background-color:#000}
+}
+
+
+디바이스 환경
+screen, print...
+
+min-width
+min-height
+
+최소사이즈 (할당된 값) 부터 ~
+(min-width:321px) 321px 이상만 스타일을 적용하겠다.
+
+max-width
+max-height
+
+최대사이즈 (할당된 값) 까지만 ~
+(max-width:320px) 320px 이하까지 스타일을 적용하겠다.
+
+*/
+/* ~ 480px */
+@media screen and (max-width: 600px) {
+    .grid-item:nth-child(2){order:1}
+    .grid-item:nth-child(5){order:-1}
+}
+
+/* 481px ~ 768px */
+@media screen and (min-width:601px) and (max-width:768px) {
+    .grid-item:nth-child(2){order:-1}
+    .grid-item:nth-child(5){order:1}
+}
