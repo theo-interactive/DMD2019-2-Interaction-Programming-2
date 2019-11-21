@@ -29,10 +29,38 @@
             onScroll: function(e) {
                 // console.log('scroll');
                 this._posY = this.$win.scrollTop();
-                //console.log(this._posY);
+                var _this = this;
+                this._galleryStartY = this._winH;
+                // this._galleryStartY = 0;
                 $.each(this.$galleryItem, function(idx, item) {
-                    console.log(idx, item);
-                    var $el = $(item), startLimit = 0, endLimit = 0;
+                    var $el = $(item), startLimit = 0, endLimit = 0, opacity = 1;
+                    startLimit = _this._winH * 2 * idx + _this._galleryStartY;
+                    endLimit = startLimit + _this._winH * 3;
+                    if(_this._posY >= startLimit && _this._posY < endLimit){
+                        if(_this._posY < startLimit + _this._winH){
+                            if(idx > 0) opacity = (_this._posY - startLimit) / _this._winH;
+                        }else if(_this._posY >= endLimit - _this._winH){
+                            // opacity = (endLimit - _this._posY) / _this._winH;
+                            opacity = 1;
+                        }else{
+                            opacity = 1;
+                        }
+                    }else{
+                        opacity = 0;
+                        // if(idx > 0) opacity = 0;
+                    }
+                    TweenMax.set($el, {css: {autoAlpha: opacity}});
+
+                    // 1
+                    // 1
+                    // 1 2
+                    //   2
+                    //   2 3
+                    //     3
+
+                    // if(idx === 0){
+                        // console.log($el.offset().top);
+                    // }
                     //요소의 offset().top 스크롤 Y 좌표로는 체크할 수 없다.
                     //if(condition) {
                         //해당하는 요소를 체크. - opacity 0->1 / 1 / 1->0
