@@ -45,4 +45,60 @@ fieldset{border:none}
 
 /* ---- LAYOUT ---- */
 .blind{display:none;visibility:hidden}
-.inactive{visibility:hidden}
+/* .inactive{visibility:hidden} */
+.section{
+    position:relative;
+    height:auto
+}
+.section .sticky-container{
+    height:100vh
+}
+.section .sticky-container .sticky{
+    overflow:hidden;
+    position:-webkit-sticky;
+    position:sticky;
+    top:0;
+    height:100vh
+}
+.section:nth-child(1){
+    z-index:10
+}
+.section:nth-child(2){
+    margin-top:-100vh
+}
+.section:nth-child(2) .sticky-container{
+    height:200vh
+}
+.section:nth-child(3) .sticky-container{
+    /* height: ?; */
+    height:600vh
+}
+
+.gallery{
+    position:relative;
+    height:100vh
+}
+.gallery .gallery-item{
+    position:absolute;
+    top:0;
+    height:100vh;
+    opacity:0
+}
+.gallery .gallery-item:first-child{
+    opacity:1
+}
+.gallery .gallery-item:nth-child(1){
+    z-index:2
+}
+.gallery .gallery-item:nth-child(2){
+    z-index:3
+}
+.gallery .gallery-item:nth-child(3){
+    z-index:4
+}
+.section .image-area{position:relative;width:100%;height:100%}
+.section .image-area img{display:inline-block;width:100%;height:100%;vertical-align:top;object-fit:cover}
+.section .text-area{position:absolute;top:50%;right:0;left:0;margin-top:-55px;text-align:center;color:#fff;font-weight:700}
+.section .text-area .title{font-size:50px;line-height:60px}
+.section .text-area .desc{font-size:24px;letter-spacing:2px;line-height:30px}
+.section .text-area .title + .desc{margin-top:20px}

@@ -46,3 +46,95 @@ fieldset{border:none}
 /* ---- LAYOUT ---- */
 .blind{display:none;visibility:hidden}
 .inactive{visibility:hidden}
+
+/*
+
+position: fixed
+position: absolute
+
+예전... js 에서 상황에 따라 변경을 하면서 스크롤 이벤트를 적용했다.
+
+position: sticky
+
+sticky!!
+
+position:-webkit-sticky; position:sticky; - webkit 브라우저를 위한 크로스 브라우징.
+
+크로스 브라우징.
+5대 브라우저: 크롬, 익스플로러, 사파리, 파이어폭스, 오페라.
+5대 브라우저 버전별: 익스플로러의 ie5 ie6 ie7 ie8 ie9 ie10 ie11 edge ...
+// ie11 ..
+
+*** 모든 브라우저에서 동일한 퍼포먼스를 주기 위한 노력 ***
+
+// 모바일, 태블릿...
+.....
+
+-webkit- 크롬, 사파리.
+-moz- 파이어폭스.
+-ms- 익스플로러
+-o- 오페라.
+
+*/
+
+.section{
+    overflow:hidden;
+    position:-webkit-sticky;
+    position:sticky;
+    top:0;
+    height:100vh
+}
+.section .image-area{
+    position:relative;
+    width:100%;
+    height:100%
+}
+.section .image-area img{
+    display:inline-block;
+    width:100%;
+    height:100%;
+    vertical-align:top;
+    object-fit:cover
+}
+.section .text-area{
+    position:absolute;
+    /* top:0;
+    right:0;
+    bottom:0;
+    left:0 */
+    top:50%;
+    right:0;
+    left:0;
+    /* width:100%; */
+    margin-top:-55px;
+    text-align:center;
+    color:#fff;
+    font-weight:700;
+    /*
+    transform:translateY(-50%);
+    -webkit-transform:translateY(-50%);
+    -moz-transform:translateY(-50%);
+    -ms-transform:translateY(-50%);
+    -o-transform:translateY(-50%);
+    */
+}
+.section .text-area .title{
+    font-size:50px;
+    line-height:60px
+}
+.section .text-area .desc{
+    font-size:24px;
+    letter-spacing:2px;
+    line-height:30px
+}
+.section .text-area .title + .desc{
+    margin-top:20px
+}
+/* .section .text-area .title ~ .desc{
+    margin-top:30px
+} */
+
+/*
+el + el{}
+el ~ el{}
+*/
