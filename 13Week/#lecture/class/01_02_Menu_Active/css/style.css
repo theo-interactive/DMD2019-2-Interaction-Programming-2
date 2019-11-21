@@ -47,7 +47,11 @@ fieldset{border:none}
 .blind{display:none;visibility:hidden}
 #wrap{position:relative;width:100%}
 #global-nav{position:fixed;z-index:1000;top:0;width:100%;background-color:#fff;box-shadow:0 1px 2px rgba(34,34,34,0.1);box-sizing:border-box;text-align:center;-webkit-transition:-webkit-transform 120ms ease-in-out;-moz-transition:-moz-transform 120ms ease-in-out;-ms-transition:-ms-transform 120ms ease-in-out;-o-transition:-o-transform 120ms ease-in-out;transition:transform 120ms ease-in-out}
+
+
 #global-nav.hide{-webkit-transform:translateY(-100%);-moz-transform:translateY(-100%);-ms-transform:translateY(-100%);-o-transform:translateY(-100%);transform:translateY(-100%)}
+
+
 #global-nav li{display:inline-block;position:relative;height:60px}
 #global-nav li + li{padding-left:40px}
 #global-nav li a{display:block;position:relative;padding:15px 10px;text-transform:uppercase;color:#888;font-size:12px;font-weight:600;line-height:30px;-webkit-transition:color 180ms ease-in-out;-moz-transition:color 180ms ease-in-out;-ms-transition:color 180ms ease-in-out;-o-transition:color 180ms ease-in-out;transition:color 180ms ease-in-out}
