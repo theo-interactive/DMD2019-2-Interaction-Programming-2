@@ -1,9 +1,15 @@
 (function($){
     $(document).ready(function(){
-        $(window).scroll(function(e) {
-            var st = $(this).scrollTop();
-            if (Math.abs(lastScrollTop - st) <= delta) return;
-            if ((st > lastScrollTop) && (lastScrollTop > 0)) {
+
+        // var $gn = $('#global-nav');
+        // var $gnEl = $gn.find('a');
+
+        //원하는 것?
+        //스크롤 했을 때, navigation에 있는 text의 색이 변경되는거..
+            var lastScrollTop = 0, delta = 15;
+            var st = $(this).scrollDown();
+            if (Math.abs(lastScrollDown - st) <= delta) return;
+            if ((st > lastScrollDown) && (lastScrollTop > 0)) {
                 $('nav').css({
                     'top': '-80px'
                 });
@@ -14,7 +20,7 @@
             }
             lastScrollTop = st;
 
-            $('#global-nav a').click(function(){
+            $('#global-nav li a').click(function(){
                 $('html, body').animate({
                 scrollTop: $( $.attr(this, 'href')).offset().top
                 }, 500);
