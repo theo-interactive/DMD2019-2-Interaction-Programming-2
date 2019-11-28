@@ -36,6 +36,20 @@
                     var $el = $(item), startLimit = 0, endLimit = 0, opacity = 1;
                     startLimit = _this._winH * 2 * idx + _this._galleryStartY;
                     endLimit = startLimit + _this._winH * 3;
+
+                    // 1차 방정식.
+                    // x : y = a : b
+                    // x = a * y / b;
+
+                    // x : 내가 찾아낼 수치. ?
+                    // y : 수치의 최대값. 1
+                    // a : 현재의 스크롤값 (this._posY); 500
+                    // b : 스크롤의 최대값 (endLimit); 1000.
+
+                    // x = 500 * 1 / 1000;
+                    // --> 0.5
+
+
                     if(_this._posY >= startLimit && _this._posY < endLimit){
                         if(_this._posY < startLimit + _this._winH){
                             if(idx > 0) opacity = (_this._posY - startLimit) / _this._winH;
